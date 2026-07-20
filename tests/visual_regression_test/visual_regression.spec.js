@@ -11,8 +11,6 @@ test('Visual regression test', async({page}) => {
     await expect(page).toHaveScreenshot('inventory_page.png', {fullPage:true,
     maxDiffPixelRatio: 0.01, threshold: 0.01, animations: 'disabled',
     })
-
-    await page.pause()
     
     await page.locator('[data-test="shopping-cart-link"]').click();
     await expect(page).toHaveURL('https://www.saucedemo.com/cart.html')
